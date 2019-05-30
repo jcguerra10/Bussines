@@ -23,6 +23,8 @@ public class Company{
     protected char type;
     protected String legalRepresentative;
     //
+    protected Cubicle[][] cubicules;
+    //
 	public Company(String name, String nit, String address, String phone, int employees, double valueAseets, String constitutionDate, char type, String legalRepresentative) {
 		this.name = name;
 		this.nit = nit;
@@ -106,10 +108,22 @@ public class Company{
 	public void setLegalRepresentative(String legalRepresentative) {
 		this.legalRepresentative = legalRepresentative;
 	}
+    //
 
-    /*public String toString(){
-        String msg = "";
-        msg += "El nombre de la empresa es: "+getName();
-        return msg;
-    }*/
+    public void addBuilding(int floors){
+        cubicules = new Cubicle[floors][20];
+        int k=0;
+        for (int i=0;i<cubicules.length;i++) {
+            k=0;
+            for (k=0;k<cubicules[0].length;k++) {
+                Cubicle newCubicle = new Cubicle(null, null, null, null);
+                cubicules[i][k] = newCubicle;
+                int n = (int)(Math.random() * 10000) + 1;
+                String w = "E-"+n;
+                cubicules[i][k].setExtension(w);
+            }
+
+        }
+    }
+
 }

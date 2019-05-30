@@ -139,10 +139,14 @@ public class Main{
                 break;
                 case 3:
                     //
+                    System.out.println("Que tipo de compania es: ");
+                    System.out.println("1. Educacion");
+                    System.out.println("2. Tecnologia");
+                    int type = scanInt.nextInt();
                     System.out.println("Escoja la compania que desea agregar encuestas");
                     System.out.println(emp.shortInfo());
                     int index = scanInt.nextInt();
-                    boolean e = false
+                    boolean e = false;
                     for (int i=0;!e;i++ ) {
                         System.out.println("Respuesta 1 encuesta #"+i);
                         String a = scanStr.nextLine();
@@ -151,9 +155,35 @@ public class Main{
                         System.out.println("Respuesta 3 encuesta #"+i);
                         String c = scanStr.nextLine();
 
-                        emp.addPoll(index, a, b, c);
+                        emp.addPoll(type, index, a, b, c);
+
+                        if (i >= 10) {
+                            System.out.println("Quiere Seguir agregando encuestas?");
+                            System.out.println("1. si");
+                            System.out.println("2. no");
+                            int cont = scanInt.nextInt();
+                            if (cont == 1) {
+                                if (i>50) {
+                                    System.out.println("Ha exedido el limite");
+                                    e = true;
+                                }
+                            }else if (cont == 2) {
+                                e = true;
+                            }
+                        }
                     }
                 break;
+                case 4:
+                    //
+                    System.out.println("Que compania decea agregar un edificio");
+                    System.out.println(emp.showShortInfo());
+                    int indexE = scanInt.nextInt();
+                    System.out.println("Cuantos pisos tiene el edificio (recuerde que es de 3 a 7)");
+                    int floors = scanInt.nextInt();
+                    //
+                    emp.addBuilding(indexE, floors);
+
+
             }
         }
     }
@@ -162,5 +192,6 @@ public class Main{
         System.out.println("1. Para registrar una empresa");
         System.out.println("2. Para obtener toda la infromacion del Holding");
         System.out.println("3. Para agregar encuestas a las empresas de servicio");
+        System.out.println("4. Para agregar un edificio");
     }
 }

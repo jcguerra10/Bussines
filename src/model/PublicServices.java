@@ -40,4 +40,10 @@ public class PublicServices extends Company implements Taxable{
 	public void setTotalSubsOneAndTwo(int totalSubsOneAndTwo) {
 		this.totalSubsOneAndTwo = totalSubsOneAndTwo;
 	}
+
+    public double calcTaxable(){
+        double tot = 0.0;
+        
+        return tot;
+    }
 }

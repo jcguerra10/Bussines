@@ -27,6 +27,17 @@ public class Technology extends ServiceCompany{
         msg += "Fecha de constitucion: "+super.getConstitutionDate()+"\n";
         msg += "Tipo de compañia: "+super.getType()+"\n";
         msg += "Nombre del representante legal: "+super.getLegalRepresentative()+"\n";
+        if (polls != null){
+            int k=0;
+            for (int i=0;i<polls.length;i++) {
+                k=0;
+                for (k=0;k<polls[0].length;k++) {
+                    if (polls[i][k] != null) {
+                        msg += polls[i][k];
+                    }
+                }
+            }
+        }
         return msg;
     }
 

@@ -2,13 +2,13 @@ package model;
 //
 import java.util.*;
 //
-public class Cublicle{
-    private String employees
+public class Cubicle{
+    private String employees;
     private String charge;
     private String email;
     private String extension;
     //
-	public Cublicle(String employees, String charge, String email, String extension) {
+	public Cubicle (String employees, String charge, String email, String extension) {
 		this.employees = employees;
 		this.charge = charge;
 		this.email = email;
