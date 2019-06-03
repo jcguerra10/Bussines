@@ -126,4 +126,127 @@ public class Company{
         }
     }
 
+    public String searchWithType(char type){
+        String msg = "";
+        if (type == 'L') {
+            for (int i=0;i<cubicules.length;i++) {
+                msg += cubicules[i][0].getExtension()+"\n";
+            }
+            msg += "\n";
+            for (int k=0;k<cubicules[0].length;k++) {
+                int length = cubicules.length-1;
+                msg += cubicules[length][k].getExtension()+"\n";
+            }
+        }
+        else if (type == 'Z') {
+            for (int i=0;i<cubicules[0].length;i++ ) {
+                msg += cubicules[0][i].getExtension()+"\n";
+            }
+            msg += "\n";
+            boolean exit = false;
+            int a = 0;
+            int b = cubicules[0].length-1;
+            while (!exit) {
+                msg += cubicules[a][b].getExtension() + "\n";
+                ++a;
+                --b;
+                if (a>=cubicules.length) {
+                    exit = true;
+                }
+                if (b<=0) {
+                    exit = true;
+                }
+            }
+            msg += "\n";
+            for (int k=0;k<cubicules[0].length;k++) {
+                int length = cubicules.length-1;
+                msg += cubicules[length][k].getExtension()+"\n";
+            }
+        }
+        else if (type == 'X') {
+            boolean exit = false;
+            for (int i=0;!exit;i++) {
+                if (i<cubicules.length && i<cubicules[0].length) {
+                    msg += cubicules[i][i].getExtension() + "\n";
+                }else if (i>=cubicules.length || i>=cubicules[0].length ) {
+                    exit = true;
+                }
+            }
+            msg += "\n";
+            int a = 0;
+            int b = cubicules[0].length-1;
+            exit = false;
+            while (!exit) {
+                msg += cubicules[a][b].getExtension() + "\n";
+                ++a;
+                --b;
+                if (a==cubicules.length) {
+                    exit = true;
+                }
+                if (b==0) {
+                    exit = true;
+                }
+            }
+        }
+        else if (type == 'O') {
+            for (int i=0;i<cubicules[0].length;i++ ) {
+                msg += cubicules[0][i].getExtension()+"\n";
+            }
+            msg += "\n";
+            for (int i=0;i<cubicules.length;i++) {
+                msg += cubicules[i][cubicules[0].length-1].getExtension()+"\n";
+            }
+            msg += "\n";
+            for (int i=0;i<cubicules.length;i++) {
+                msg += cubicules[i][0].getExtension()+"\n";
+            }
+            msg += "\n";
+            for (int k=0;k<cubicules[0].length;k++) {
+                int length = cubicules.length-1;
+                msg += cubicules[length][k].getExtension()+"\n";
+            }
+        }
+        else if (type == 'E') {
+            boolean exit = false;
+            int i=0;
+            int f = 0;
+            int k = 0;
+            while (!exit) {
+                if (cubicules.length%2 != 0) {
+                    if (f<cubicules.length) {
+                        for (i=0;i<cubicules[0].length;i++) {
+                            msg += cubicules[f][i].getExtension()+"\n";
+                        }
+                        msg += "\n";
+                    }else {
+                        exit = true;
+                    }
+                    f = f+1;
+                    if (f<cubicules.length) {
+                        for (k=cubicules[0].length-1;k>0;k--) {
+                            msg += cubicules[f][k].getExtension()+"\n";
+                        }
+                        msg += "\n";
+                    }else{
+                        exit = true;
+                    }
+                    f = f+1;
+                }else{
+                    msg += "No es posible ya que el numero de pisos es par";
+                    exit = true;
+                }
+            }
+        }
+        return msg;
+    }
+
+    public String getSpiralEmails(){
+        String msg = "";
+        for (int i=0;i<cubicules[0].length;i++) {
+
+        }
+        return msg;
+    }
+
+
 }

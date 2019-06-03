@@ -175,15 +175,43 @@ public class Main{
                 break;
                 case 4:
                     //
-                    System.out.println("Que compania decea agregar un edificio");
+                    System.out.println("Que compania desea agregar un edificio");
                     System.out.println(emp.showShortInfo());
                     int indexE = scanInt.nextInt();
                     System.out.println("Cuantos pisos tiene el edificio (recuerde que es de 3 a 7)");
                     int floors = scanInt.nextInt();
                     //
                     emp.addBuilding(indexE, floors);
+                break;
+                case 5:
+                    //
+                    System.out.println("En que compania desea buscar");
+                    System.out.println(emp.showShortInfo());
+                    int indexC = scanInt.nextInt();
+                    System.out.println("Que tipo de busqueda desea usar");
+                    System.out.println("1. L");
+                    System.out.println("2. Z");
+                    System.out.println("3. X");
+                    System.out.println("4. O");
+                    System.out.println("5. E");
+                    //
+                    char typeC = 'A';
+                    int ty = scanInt.nextInt();
+                    if (ty == 1) {
+                        typeC = 'L';
+                    }else if (ty == 2) {
+                        typeC = 'Z';
+                    }else if (ty == 3) {
+                        typeC = 'X';
+                    }else if (ty == 4) {
+                        typeC = 'O';
+                    }else if (ty == 5) {
+                        typeC = 'E';
+                    }
 
+                    System.out.println(emp.searchWithType(indexC, typeC));
 
+                break;
             }
         }
     }
@@ -193,5 +221,6 @@ public class Main{
         System.out.println("2. Para obtener toda la infromacion del Holding");
         System.out.println("3. Para agregar encuestas a las empresas de servicio");
         System.out.println("4. Para agregar un edificio");
+        System.out.println("5. Para buscar extensiones");
     }
 }

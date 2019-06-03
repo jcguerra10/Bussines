@@ -62,4 +62,10 @@ public class Holding{
     public void addBuilding(int index, int floors){
         companys.get(index).addBuilding(floors);
     }
+
+    public String searchWithType(int index, char type){
+        String msg = "";
+        msg += companys.get(index).searchWithType(type);
+        return msg;
+    }
 }
