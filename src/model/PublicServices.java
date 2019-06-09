@@ -90,7 +90,7 @@ public class PublicServices extends Company implements Taxable {
      * @return
      */
     public String toString() {
-        String msg += "";
+        String msg = "";
         msg += "Soy una empresa de servicio publico";
         msg += "Nombre: " + super.getName() + "\n";
         msg += "Nit: " + super.getNit() + "\n";
@@ -110,7 +110,7 @@ public class PublicServices extends Company implements Taxable {
      */
     public double calcTaxable() {
         double tot = 0.0;
-
+        tot = 40% - getTotalSubsOneAndTwo();
         return tot;
     }
 }

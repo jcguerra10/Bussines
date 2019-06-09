@@ -8,12 +8,12 @@ import model.*;
 public class Main {
 
     private Holding emp;
-  //
+    //
 
     public Main() {
         init();
     }
-    
+
     public void init() {
         emp = new Holding("Holding empresarial");
     }
@@ -22,7 +22,7 @@ public class Main {
         Main m = new Main();
         m.msg();
     }
-    
+
     public void msg() {
         Scanner scanStr = new Scanner(System.in);
         Scanner scanInt = new Scanner(System.in);

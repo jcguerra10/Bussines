@@ -363,7 +363,7 @@ public class Company {
         for (int i = 0; i < cubicules.length; i++) {
             //Abajo
             for (int k = 0; i < cubicules[0].length - adder; k++) {
-                if (cubicules[k][i].getCharge().equals(cargo)) {
+                if (cubicules[k][i].getCharge().equals(charge)) {
                     msj += cubicules[k][i].getEmail();
                 }
                 downRigth = true;
@@ -371,7 +371,7 @@ public class Company {
             //Abajo derecha
             if (downRigth == true) {
                 for (int j = 1; j < cubicules[0].length - adder; j++) {
-                    if (cubicules[cubicules.length][j].getCharge().equals(cargo)) {
+                    if (cubicules[cubicules.length][j].getCharge().equals(charge)) {
                         msj += cubicules[cubicules.length][j].getEmail();
                     }
                     lastUp = true;
@@ -381,7 +381,7 @@ public class Company {
             if (lastUp == true) {
                 for (int k = cubicules.length; k > adder; k--) {
 
-                    if (cubicules[k][cubicules.length].getCharge().equals(cargo)) {
+                    if (cubicules[k][cubicules.length].getCharge().equals(charge)) {
                         msj += cubicules[k][cubicules.length].getEmail();
                     }
                     upLeft = true;
@@ -390,7 +390,7 @@ public class Company {
 
             if (upLeft == true) {
                 for (int m = cubicules.length - adder; m > receiver; m--) {
-                    if (cubicules[receiver][m].getCharge().equals(cargo)) {
+                    if (cubicules[receiver][m].getCharge().equals(charge)) {
                         msj += cubicules[receiver][m].getEmail();
                     }
                 }
