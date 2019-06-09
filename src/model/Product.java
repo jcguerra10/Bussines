@@ -1,6 +1,8 @@
 package model;
 //
-public class Product{
+
+public class Product {
+
     private String name;
     private String code;
     private double waterAmount;
@@ -8,68 +10,131 @@ public class Product{
     //
     private Sanitation sanitation;
     private Invima invima;
+
     //
-	public Product(String name, String code, double waterAmount, int units, Sanitation sanitation, Invima invima) {
-		this.name = name;
-		this.code = code;
-		this.waterAmount = waterAmount;
-		this.units = units;
-		this.sanitation = sanitation;
-		this.invima = invima;
-	}
+    /**
+     *
+     * @param name
+     * @param code
+     * @param waterAmount
+     * @param units
+     * @param sanitation
+     * @param invima
+     */
+    public Product(String name, String code, double waterAmount, int units, Sanitation sanitation, Invima invima) {
+        this.name = name;
+        this.code = code;
+        this.waterAmount = waterAmount;
+        this.units = units;
+        this.sanitation = sanitation;
+        this.invima = invima;
+    }
 
-	public String getName() {
-		return name;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    /**
+     *
+     * @param code
+     */
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public double getWaterAmount() {
-		return waterAmount;
-	}
+    /**
+     *
+     * @return
+     */
+    public double getWaterAmount() {
+        return waterAmount;
+    }
 
-	public void setWaterAmount(double waterAmount) {
-		this.waterAmount = waterAmount;
-	}
+    /**
+     *
+     * @param waterAmount
+     */
+    public void setWaterAmount(double waterAmount) {
+        this.waterAmount = waterAmount;
+    }
 
-	public int getUnits() {
-		return units;
-	}
+    /**
+     *
+     * @return
+     */
+    public int getUnits() {
+        return units;
+    }
 
-	public void setUnits(int units) {
-		this.units = units;
-	}
+    /**
+     *
+     * @param units
+     */
+    public void setUnits(int units) {
+        this.units = units;
+    }
 
-	public Sanitation getSanitation() {
-		return sanitation;
-	}
+    /**
+     *
+     * @return
+     */
+    public Sanitation getSanitation() {
+        return sanitation;
+    }
 
-	public void setSanitation(Sanitation sanitation) {
-		this.sanitation = sanitation;
-	}
+    /**
+     *
+     * @param sanitation
+     */
+    public void setSanitation(Sanitation sanitation) {
+        this.sanitation = sanitation;
+    }
 
-	public Invima getInvima() {
-		return invima;
-	}
+    /**
+     *
+     * @return
+     */
+    public Invima getInvima() {
+        return invima;
+    }
 
-	public void setInvima(Invima invima) {
-		this.invima = invima;
-	}
+    /**
+     *
+     * @param invima
+     */
+    public void setInvima(Invima invima) {
+        this.invima = invima;
+    }
+
     //
+    /**
+     *
+     * @return
+     */
     public String toString() {
         String msg = "";
-        msg += "Nombre del producto: " + getName()+"\n";
-        msg += "El codigo del producto es: "+getCode()+"\n";
+        msg += "Nombre del producto: " + getName() + "\n";
+        msg += "El codigo del producto es: " + getCode() + "\n";
         return msg;
     }
 }

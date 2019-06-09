@@ -1,34 +1,40 @@
 package ui;
 //
+
 import java.util.*;
 import model.*;
 //
-public class Main{
+
+public class Main {
+
     private Holding emp;
-    //
-    public Main(){
+  //
+
+    public Main() {
         init();
     }
-    public void init(){
-        emp = new Holding();
+    
+    public void init() {
+        emp = new Holding("Holding empresarial");
     }
+
     public static void main(String[] args) {
         Main m = new Main();
         m.msg();
     }
-
-    public void msg(){
-        Scanner scanStr = new Scanner (System.in);
-		Scanner scanInt = new Scanner (System.in);
-		Scanner scanDou = new Scanner (System.in);
+    
+    public void msg() {
+        Scanner scanStr = new Scanner(System.in);
+        Scanner scanInt = new Scanner(System.in);
+        Scanner scanDou = new Scanner(System.in);
         //
         System.out.println("BIENVENIDO AL PROGRAMA PARA EL HOLDING EMPRESARIAL");
         //
         int option = 0;
-		boolean exit = false;
-		while (!exit){
-			menu();
-			option = scanInt.nextInt();
+        boolean exit = false;
+        while (!exit) {
+            menu();
+            option = scanInt.nextInt();
             switch (option) {
                 case 1:
                     //
@@ -51,7 +57,7 @@ public class Main{
                     int month = scanInt.nextInt();
                     System.out.println("Anio: ");
                     int year = scanInt.nextInt();
-                    String constitutionDateE = day+"/"+month+"/"+year;
+                    String constitutionDateE = day + "/" + month + "/" + year;
                     System.out.println("Que tipo de empresa es:");
                     System.out.println("1. Agricultura, Caza, Silvicultura Y Pezca");
                     System.out.println("2. Explotacion de minas y canteras");
@@ -67,21 +73,21 @@ public class Main{
                     int opType = scanInt.nextInt();
                     if (opType == 1) {
                         typeE = 'A';
-                    }else if (opType == 2) {
+                    } else if (opType == 2) {
                         typeE = 'B';
-                    }else if (opType == 3) {
+                    } else if (opType == 3) {
                         typeE = 'C';
-                    }else if (opType == 4) {
+                    } else if (opType == 4) {
                         typeE = 'D';
-                    }else if (opType == 5) {
+                    } else if (opType == 5) {
                         typeE = 'E';
-                    }else if (opType == 6) {
+                    } else if (opType == 6) {
                         typeE = 'F';
-                    }else if (opType == 7) {
+                    } else if (opType == 7) {
                         typeE = 'G';
-                    }else if (opType == 8) {
+                    } else if (opType == 8) {
                         typeE = 'H';
-                    }else if (opType == 9) {
+                    } else if (opType == 9) {
                         typeE = 'I';
                     }
                     System.out.println("Digite el nombre del representante legal");
@@ -94,7 +100,7 @@ public class Main{
                     if (opCompany == 1) {
                         Company newCompany = new ManufacturingCompany(nameE, nitE, addressE, phoneE, employeesE, valueAseetsE, constitutionDateE, typeE, legalRepresentativeE);
                         emp.addCompany(newCompany);
-                    }else if (opCompany == 2) {
+                    } else if (opCompany == 2) {
                         System.out.println("Digite si es: ");
                         System.out.println("1. Tecnologia");
                         System.out.println("2. Educacion");
@@ -102,7 +108,7 @@ public class Main{
                         if (opServiceCompany == 1) {
                             Company newServiceCompany = new Technology(nameE, nitE, addressE, phoneE, employeesE, valueAseetsE, constitutionDateE, typeE, legalRepresentativeE);
                             emp.addCompany(newServiceCompany);
-                        }else if (opServiceCompany == 2) {
+                        } else if (opServiceCompany == 2) {
                             System.out.println("Digite el numero de registro ante el MEN");
                             int noMENE = scanStr.nextInt();
                             System.out.println("Digite los anios de acreditados");
@@ -120,7 +126,7 @@ public class Main{
                             int opSector = scanInt.nextInt();
                             if (opSector == 1) {
                                 educationSectorE = "Bachillerato";
-                            }else if (opSector == 2) {
+                            } else if (opSector == 2) {
                                 educationSectorE = "Universidad";
                             }
                             System.out.println("Numero de estudiantes de estrato uno y dos");
@@ -132,11 +138,11 @@ public class Main{
                             emp.addCompany(newEducation);
                         }
                     }
-                break;
+                    break;
                 case 2:
                     //
                     System.out.println(emp.showInfo());
-                break;
+                    break;
                 case 3:
                     //
                     System.out.println("Que tipo de compania es: ");
@@ -147,32 +153,31 @@ public class Main{
                     System.out.println(emp.shortInfo());
                     int index = scanInt.nextInt();
                     boolean e = false;
-                    for (int i=0;!e;i++ ) {
-                        System.out.println("Respuesta 1 encuesta #"+i);
+                    for (int i = 0; !e; i++) {
+                        System.out.println("Respuesta 1 encuesta #" + i);
                         String a = scanStr.nextLine();
-                        System.out.println("Respuesta 2 encuesta #"+i);
+                        System.out.println("Respuesta 2 encuesta #" + i);
                         String b = scanStr.nextLine();
-                        System.out.println("Respuesta 3 encuesta #"+i);
+                        System.out.println("Respuesta 3 encuesta #" + i);
                         String c = scanStr.nextLine();
 
                         emp.addPoll(type, index, a, b, c);
-
                         if (i >= 10) {
                             System.out.println("Quiere Seguir agregando encuestas?");
                             System.out.println("1. si");
                             System.out.println("2. no");
                             int cont = scanInt.nextInt();
                             if (cont == 1) {
-                                if (i>50) {
+                                if (i > 50) {
                                     System.out.println("Ha exedido el limite");
                                     e = true;
                                 }
-                            }else if (cont == 2) {
+                            } else if (cont == 2) {
                                 e = true;
                             }
                         }
                     }
-                break;
+                    break;
                 case 4:
                     //
                     System.out.println("Que compania desea agregar un edificio");
@@ -182,7 +187,7 @@ public class Main{
                     int floors = scanInt.nextInt();
                     //
                     emp.addBuilding(indexE, floors);
-                break;
+                    break;
                 case 5:
                     //
                     System.out.println("En que compania desea buscar");
@@ -199,24 +204,24 @@ public class Main{
                     int ty = scanInt.nextInt();
                     if (ty == 1) {
                         typeC = 'L';
-                    }else if (ty == 2) {
+                    } else if (ty == 2) {
                         typeC = 'Z';
-                    }else if (ty == 3) {
+                    } else if (ty == 3) {
                         typeC = 'X';
-                    }else if (ty == 4) {
+                    } else if (ty == 4) {
                         typeC = 'O';
-                    }else if (ty == 5) {
+                    } else if (ty == 5) {
                         typeC = 'E';
                     }
 
                     System.out.println(emp.searchWithType(indexC, typeC));
 
-                break;
+                    break;
             }
         }
     }
 
-    public void menu(){
+    public void menu() {
         System.out.println("1. Para registrar una empresa");
         System.out.println("2. Para obtener toda la infromacion del Holding");
         System.out.println("3. Para agregar encuestas a las empresas de servicio");
